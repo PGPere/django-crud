@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>The List of Fabulous Snacks</h1>
+  {% for snack in sn_list %}
+      <h2><a href= "{% url 'snacks_detail' snack.pk %}">{{ snack.name}}</a></h2>>
+      <button type="submit"><a href="{% url 'snacks-update' snack.pk %}">Update</a></button>
+      <button type="submit"><a href="{% url 'snacks-delete' snack.pk %}">Delete</a></button>
+  {% endfor %}
+{% endblock content %}
